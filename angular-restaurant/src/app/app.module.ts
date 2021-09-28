@@ -15,7 +15,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ItemComponent } from './components/item/item.component';
 import { UpdateItemComponent } from './components/update-item/update-item.component';
 import { CartComponent } from './components/cart/cart.component';
-import { DesignComponent } from './components/design/design.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { DesignComponent } from './components/design/design.component';
     ItemComponent,
     UpdateItemComponent,
     CartComponent,
-    DesignComponent,
+    PagenotfoundComponent,
 
 
   ],
