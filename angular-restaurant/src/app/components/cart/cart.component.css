@@ -1,0 +1,41 @@
+.container {
+    max-width: 90%;
+    margin: 2rem auto;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.fa-trash {
+    color: red;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.name {
+    font-size: 2rem;
+}
+
+.quantity {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 576px) {
+    .item {
+        max-width: 95%;
+        margin: 0.5rem auto;
+    }
+    .name,
+    .quantity {
+        font-size: 1rem;
+    }
+    img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+}

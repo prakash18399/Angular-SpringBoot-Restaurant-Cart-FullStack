@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg fixed-top bg-dark ">
+    <a class="navbar-brand" [routerLink]="['/']">Charlie's Restaurant</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/']">Menu</a>
+            </li>
+            <li *ngIf="(isloggedIn == false)" class=" nav-item ">
+                <a class="nav-link " [routerLink]="[ '/register']">Register</a>
+            </li>
+            <li *ngIf="(isloggedIn == false)" class="nav-item">
+                <a class="nav-link" [routerLink]="['/login']">Login</a>
+            </li>
+            <li *ngIf="(isloggedIn == true)" class="nav-item">
+                <a (click)="logout()" class="nav-link">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<section id="home">
+    <img id="homeimg" src="../../../assets/bg.jpg" alt="bg">
+</section>
+
+<div class="container category">
+
+    <button (click)="getAllItems()" class="btn btn-dark">All</button>
+    <button (click)="getItemByCategory('maincourse')" class="btn btn-dark">Main Course</button>
+    <button (click)="getItemByCategory('breakfast')" class="btn btn-dark">Breakfast</button>
+    <button (click)="getItemByCategory('chinese')" class="btn btn-dark">Chinese</button>
+    <button (click)="getItemByCategory('fastfood')" class="btn btn-dark">Fast Food</button>
+    <button *ngIf="(customer.role == 'USER' && isloggedIn == true)" (click)="getCartItems(customer.id)" class="btn btn-dark">See Cart
+        Items</button>
+</div>
+
+<div class="container cards">
+    <div class="row">
+        <div class="card" *ngFor="let item of items">
+            <img class="image img-fluid" src="{{item.image}}" alt="{{item.name}}">
+            <div class="content">
+                <p class="msj">{{msj}}</p>
+                <div class="name">
+                    <h1>{{item.name}}</h1>
+                    <h1 class="card-title"><i class="fas fa-rupee-sign"></i> {{item.price}}</h1>
+                </div>
+                <p class="card-text">{{item.description}}</p>
+                <div *ngIf="(role == 'ADMIN' && isloggedIn === true)" class="button-admin">
+                    <button routerLink="/items/add" class="btn btn-dark">Add</button>
+                    <button (click)="updateItem(item.id)" class="btn btn-secondary">Update</button>
+                    <button (click)="deleteItem(item.id)" class="btn btn-danger">Delete</button>
+                </div>
+
+                <div *ngIf="(role === 'USER' && isloggedIn === true)" class="button-admin">
+                    <button (click)="addToCart(customer.id,item.id,quantity,customer,item.name)" class="btn btn-dark">Add To Cart</button>
+                    <button (click)="decrease()" class="btn btn-dark"><i class="fas fa-minus-square "></i></button>
+                    <input [(ngModel)]="quantity" class="form-control quantity" name="quantity" type="number">
+                    <button (click)="increase()" class="btn btn-dark"><i class="fas fa-plus-square "></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

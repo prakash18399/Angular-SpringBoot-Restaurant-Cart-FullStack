@@ -1,0 +1,25 @@
+<div class="container menu">
+    <button (click)="goToMenu()" class="btn btn-dark">
+        Go Back To Menu
+    </button>
+</div>
+<div class="container item">
+    <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let obj of cartItems">
+            <tr>
+                <td><img src="{{obj.item.image}}" alt="{{obj.item.name}}"></td>
+                <td class="name">{{obj.item.name}}</td>
+                <td class="quantity">{{obj.quantity}}</td>
+                <td><i (click)="deleteItemFromCart(obj.customer.id,obj.id)" class="fas fa-trash"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,28 @@
+#logo {
+    width: 60px;
+    height: 40px;
+}
+
+.navbar-toggler {
+    color: white;
+}
+
+li a {
+    color: white;
+}
+
+.fa-bars {
+    margin: 5px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+li a:hover {
+    background-color: white;
+    color: black;
+}
+
+.navbar-brand {
+    color: white;
+    font-weight: 500;
+}

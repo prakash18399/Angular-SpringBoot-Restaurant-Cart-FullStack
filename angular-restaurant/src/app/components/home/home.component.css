@@ -1,0 +1,124 @@
+.category {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20rem;
+    max-width: 50%;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.quantity {
+    max-width: 60px;
+}
+
+.cards {
+    max-width: 90%;
+    margin: 1.5rem auto;
+}
+
+.image {
+    width: 300px;
+    height: 220px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card:hover {
+    box-shadow: 5px 12px 20px rgba(29, 25, 25, 0.4);
+}
+
+.card {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 1.2rem 1.2rem;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.msj {
+    color: green;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 576px) {
+    .card {
+        margin: 0.5rem auto;
+    }
+    .button-admin {
+        display: column;
+    }
+    .category {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .category button {
+        margin: 5px;
+    }
+}
+
+.content {
+    padding: 0.5rem;
+}
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-admin {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn {
+    margin-left: 5px;
+}
+
+#home {
+    width: 100%;
+    height: 300px;
+}
+
+#homeimg {
+    width: 100%;
+    height: 600px;
+}
+
+
+/* navbar css */
+
+#logo {
+    width: 60px;
+    height: 40px;
+}
+
+.navbar-toggler {
+    color: white;
+}
+
+li a {
+    color: white;
+}
+
+.fa-bars {
+    margin: 5px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+li a:hover {
+    background-color: white;
+    color: black;
+}
+
+.navbar-brand {
+    color: white;
+    font-weight: 500;
+}

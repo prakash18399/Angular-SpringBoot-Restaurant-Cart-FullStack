@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Registration Form</h1>
+    <form #register="ngForm" (ngSubmit)="registerUser()">
+        <h3 class="text-info">{{msj}}</h3>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="customer.username" placeholder="Enter username" required>
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="customer.email" placeholder="Enter email" required>
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="customer.password" placeholder="Enter password" required>
+        </div>
+
+        <button type="submit" [disabled]="!register.valid" class="btn btn-dark mt-2">Register</button>
+    </form>
+    <h4 class="mt-2">Already a User ?<a [routerLink]="['/login']"> Login</a></h4>
+</div>
