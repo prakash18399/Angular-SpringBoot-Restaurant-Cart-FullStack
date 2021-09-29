@@ -1,0 +1,23 @@
+<div class="container menu">
+    <button (click)="goToMenu()" class="btn btn-dark">
+        Go Back To Menu
+    </button>
+</div>
+
+<div class="container">
+    <h1>Update Customer Profile</h1>
+    <form #update="ngForm" (ngSubmit)="updateCustomer()">
+
+        <div class="form-group">
+            <label for="name">Username</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="customer.username" placeholder="Enter username" required>
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="customer.email" placeholder="Enter email" required>
+        </div>
+
+        <button type="submit" class="btn btn-dark mt-2">Update Customer Profile</button>
+    </form>
+</div>

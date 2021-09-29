@@ -1,13 +1,13 @@
 package com.mindtree.restaurant.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,9 +27,14 @@ public class CustomerController {
 		return customerService.findAllCustomers();
 	}
 
-	@GetMapping("/customers/{id}")
-	public Optional<Customer> findById(@PathVariable long id) {
-		return customerService.findById(id);
+	@GetMapping("/customers/profile/{id}")
+	public Customer findById(@PathVariable long id) {
+		return customerService.findById(id).get();
+	}
+
+	@PutMapping("/customers/edit/profile/{id}")
+	public Customer editCustomer(@PathVariable("id") long id, @RequestBody Customer customer) {
+		return customerService.editCustomer(id, customer);
 	}
 
 	@PostMapping("/register")

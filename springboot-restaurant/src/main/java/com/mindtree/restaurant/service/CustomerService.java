@@ -13,23 +13,22 @@ import com.mindtree.restaurant.repository.CustomerRepository;
 
 @Service
 public class CustomerService {
-	
+
 	@Autowired
 	CustomerRepository customerRepository;
-	
 
 	public List<Customer> findAllCustomers() {
 		return customerRepository.findAll();
 	}
-	
+
 	public Optional<Customer> findById(long id) {
 		Optional<Customer> customer = customerRepository.findById(id);
-		if(customer.isEmpty()) {
+		if (customer.isEmpty()) {
 			throw new CustomerException("Customer not found");
 		}
 		return customer;
 	}
-	
+
 	public Customer registerCustomer(Customer user) {
 		return customerRepository.save(user);
 	}
@@ -41,6 +40,13 @@ public class CustomerService {
 	public Customer findByUsernameAndPassword(String username, String password) {
 		Customer user = customerRepository.findByUsernameAndPassword(username, password);
 		return user;
+	}
+
+	public Customer editCustomer(long id, Customer customer) {
+		Customer oldCustomer = customerRepository.findById(id).get();
+		oldCustomer.setUsername(customer.getUsername());
+		oldCustomer.setEmail(customer.getEmail());
+		return customerRepository.save(oldCustomer);
 	}
 
 }

@@ -1,6 +1,6 @@
 USE restaurantdb;
 
-INSERT INTO customer(email,username,password,role) VALUES ('test@gmail.com','test','test','USER'),('prakash@gmail.com','prakash','prakash','ADMIN');
+INSERT INTO customer(email,username,password,role) VALUES ('pc@gmail.com','pc','pc','USER'),('prakash@gmail.com','prakash','prakash','ADMIN');
 
 INSERT INTO item(category,description,name,price,image) VALUES 
 

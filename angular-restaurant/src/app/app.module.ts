@@ -16,6 +16,8 @@ import { ItemComponent } from './components/item/item.component';
 import { UpdateItemComponent } from './components/update-item/update-item.component';
 import { CartComponent } from './components/cart/cart.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
+import { CustomerEditprofileComponent } from './components/customer-editprofile/customer-editprofile.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
     UpdateItemComponent,
     CartComponent,
     PagenotfoundComponent,
+    CustomerProfileComponent,
+    CustomerEditprofileComponent,
 
 
   ],

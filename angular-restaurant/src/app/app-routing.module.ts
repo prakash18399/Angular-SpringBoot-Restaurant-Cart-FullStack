@@ -6,6 +6,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CartComponent } from './components/cart/cart.component';
 import { UpdateItemComponent } from './components/update-item/update-item.component';
+import { CustomerEditprofileComponent } from './components/customer-editprofile/customer-editprofile.component';
+import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: "items/add", component: ItemComponent },
   { path: "items/update/:id", component: UpdateItemComponent },
   { path: "customers/cart/:id", component: CartComponent },
+  { path: "customers/profile/:id", component: CustomerProfileComponent },
+  { path: "customers/edit/profile/:id", component: CustomerEditprofileComponent },
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent },
 ];
 
